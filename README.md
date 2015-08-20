@@ -1,8 +1,28 @@
 # Tidy_Assignment
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
 
+==================================================================
 
 "SUBJECT"                         
+1 to 30 Group Volunteers who conducted the Activity
+
+
 "ACTIVITY"                       
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
+
+Mean of all the following measures that has:
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+
 "tBodyAcc-mean()-X"
 "tBodyAcc-mean()-Y"              
 "tBodyAcc-mean()-Z"
