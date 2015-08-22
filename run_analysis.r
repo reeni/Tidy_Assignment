@@ -16,10 +16,11 @@ X_TRAIN<-read.table(filename, header= FALSE, sep="")
 filename <- ".\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\train\\Y_train.txt"
 Y_TRAIN<-read.table(filename, header= FALSE, sep="")
 
+## Re-label Columns
 x<-as.vector(FEATURE$V2)
 colnames(X_TRAIN)<-x
 
-M<-merge(Y_TRAIN,ACTIVITY_LABELS, by.x ="V1", by.y = "V1")
+M<-join(Y_TRAIN, ACTIVITY_LABELS)
 
 colnames(M)<-c("V1","Activity")
 
@@ -38,7 +39,7 @@ SUBJECT_TEST<-read.table(filename, header= FALSE, sep="")
 
 colnames(X_TEST)<-x
 
-M<-merge(Y_TEST, ACTIVITY_LABELS, by.x ="V1", by.y = "V1")
+M<-join(Y_TEST, ACTIVITY_LABELS)
 
 colnames(M)<-c("V1","Activity")
 
@@ -66,7 +67,7 @@ s<-grep("std",colnames(Table))
 t<-c(1,2,m,s)
 nt<-Table[,t]
 
-f<-ddply(nt, .(SUBJECT,ACTIVITY),colwise(mean))
+f<-ddply(nt, .(ACTIVITY, SUBJECT),colwise(mean))
 
 write.table(f, file = "run_analysis.txt", sep = "\t", col.names = TRUE, row.names = FALSE)
 
